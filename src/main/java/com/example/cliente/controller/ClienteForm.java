@@ -1,6 +1,7 @@
 package com.example.cliente.controller;
 
 import com.example.cliente.model.Cliente;
+import com.example.cliente.repository.ClienteRepository;
 
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
@@ -56,5 +57,15 @@ public class ClienteForm {
 
     public Cliente converter() {
         return new Cliente(vatnumber, nome, email, idade);
+    }
+
+    public Cliente alterarDados(Long id, ClienteRepository clienteRepository) {
+        Cliente cliente = clienteRepository.getReferenceById(id);
+        cliente.setEmail(this.email);
+        cliente.setIdade(this.idade);
+        cliente.setNome(this.nome);
+        cliente.setVatnumber(this.vatnumber);
+        return cliente;
+
     }
 }

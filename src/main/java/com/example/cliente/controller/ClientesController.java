@@ -5,10 +5,12 @@ import java.util.List;
 
 import javax.transaction.Transactional;
 
+import org.apache.catalina.connector.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -35,11 +37,12 @@ public class ClientesController {
 
     }
 
-    // @PutMapping("/{id}")
-    // public Cliente alteraDados() {
+    @PutMapping("/{id}")
+    public ResponseEntity<ClienteDto> alteraDados(@PathVariable Long id, @RequestBody @Validated ClienteForm form) {
+        Cliente cliente = form.alterarDados(id, clienteRepository);
 
-    // return null;
-    // }
+        return ResponseEntity.ok(new ClienteDto(cliente));
+    }
 
     // o clientForm é pra pegar no corpo da requisição e não da url
     @PostMapping(" ")
