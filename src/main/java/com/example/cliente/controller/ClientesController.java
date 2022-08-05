@@ -7,6 +7,7 @@ import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -43,7 +44,8 @@ public class ClientesController {
     // o clientForm é pra pegar no corpo da requisição e não da url
     @PostMapping(" ")
     @Transactional
-    public ResponseEntity<ClienteDto> cadastrar(@RequestBody ClienteForm form, UriComponentsBuilder uriBuilder) {
+    public ResponseEntity<ClienteDto> cadastrar(@RequestBody @Validated ClienteForm form,
+            UriComponentsBuilder uriBuilder) {
         Cliente cliente = form.converter();
         clienteRepository.save(cliente);
 
