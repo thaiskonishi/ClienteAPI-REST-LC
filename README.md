@@ -1,17 +1,17 @@
 # ClienteAPI-REST-LC
-LETSCODE API REST- Programação web JAVA
 
+LETSCODE API REST- Programação web JAVA
 
 Crie uma API em Spring com a base de dados H2Database em memória que suporte.
 
 GET /client/list
-    Listar todos os clientes em JSON.
+Listar todos os clientes em JSON.
 PUT /client/{id}
-    Alterar os dados do cliente associado ao ID.
+Alterar os dados do cliente associado ao ID.
 POST /client
-    Criar um novo cliente.
+Criar um novo cliente.
 DELETE /client/{id}
-    Remover do sistema o cliente assosiado ao ID.
+Remover do sistema o cliente assosiado ao ID.
 
 O cliente tem os seguintes dados:
 

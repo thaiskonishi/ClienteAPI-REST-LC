@@ -5,6 +5,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import lombok.Getter;
+
+@Getter
 @Entity
 public class Cliente {
 
@@ -84,11 +87,11 @@ public class Cliente {
 		this.idade = idade;
 	}
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	// public String getSenha() {
