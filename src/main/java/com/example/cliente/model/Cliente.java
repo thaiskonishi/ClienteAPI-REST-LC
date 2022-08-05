@@ -1,4 +1,4 @@
-package com.example.cliente.modelos;
+package com.example.cliente.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,6 +15,17 @@ public class Cliente {
 	private String nome;
 	private String email;
 	private int idade;
+
+	public Cliente() {
+
+	}
+
+	public Cliente(String vatnumber, String nome, String email, int idade) {
+		this.vatnumber = vatnumber;
+		this.nome = nome;
+		this.email = email;
+		this.idade = idade;
+	}
 
 	@Override
 	public int hashCode() {

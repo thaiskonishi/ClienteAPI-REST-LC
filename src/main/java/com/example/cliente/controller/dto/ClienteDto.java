@@ -3,7 +3,7 @@ package com.example.cliente.controller.dto;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import com.example.cliente.modelos.Cliente;
+import com.example.cliente.model.Cliente;
 
 public class ClienteDto {
 
